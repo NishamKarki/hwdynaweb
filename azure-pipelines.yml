@@ -1,13 +1,10 @@
-# Maven pipeline using local Windows agent
-
 trigger:
 - master
 
 pool:
-  name: Default     # use your local agent pool, NOT ubuntu vmImage
+  name: Default   # local agent
 
 steps:
-# --- Set Java & Maven paths on the local agent ---
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
@@ -26,16 +23,14 @@ steps:
     script: |
       echo "##vso[task.setvariable variable=PATH]$(M2_HOME)\bin;$(PATH)"
 
-# --- Maven test (optional if you want tests) ---
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'HW6DynaWeb/pom.xml'
     goals: 'test'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
-# --- Maven package (.war) ---
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'HW6DynaWeb/pom.xml'
     goals: 'package'
