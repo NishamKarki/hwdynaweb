@@ -21,7 +21,7 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-<repository>
+<repositories>
   <id>nkarki1</id>
   <url>https://pkgs.dev.azure.com/nkarki1/_packaging/nkarki1/maven/v1</url>
   <releases>
@@ -30,7 +30,7 @@
   <snapshots>
     <enabled>true</enabled>
   </snapshots>
-</repository>
+</repositories>
     <build>
         <plugins>
             <plugin>
