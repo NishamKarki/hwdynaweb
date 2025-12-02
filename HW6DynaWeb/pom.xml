@@ -35,18 +35,3 @@
         </plugins>
     </build>
 </project>
-<repository>
-  <id>nkarki1</id>
-  <url>https://pkgs.dev.azure.com/nkarki1/_packaging/nkarki1/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
-    <server>
-      <id>nkarki1</id>
-      <username>nkarki1</username>
-      <password>AHH5Th8CNJfpLvbyKqZIpd1LaftCuGblAZwa3UT2WwzSSI32KEYqJQQJ99BLACAAAAAQgEn5AAASAZDO4Fl4</password>
-    </server>
