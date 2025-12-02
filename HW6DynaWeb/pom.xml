@@ -21,23 +21,38 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-<repositories>
-  <id>nkarki1</id>
-  <url>https://pkgs.dev.azure.com/nkarki1/_packaging/nkarki1/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repositories>
+
+    <!-- Azure Artifacts repo + deploy target -->
+    <repositories>
+        <repository>
+            <id>nkarki1</id>
+            <url>https://pkgs.dev.azure.com/nkarki1/_packaging/nkarki1/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>nkarki1</id>
+            <url>https://pkgs.dev.azure.com/nkarki1/_packaging/nkarki1/maven/v1</url>
+        </repository>
+        <snapshotRepository>
+            <id>nkarki1</id>
+            <url>https://pkgs.dev.azure.com/nkarki1/_packaging/nkarki1/maven/v1</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
                 <configuration>
-                    <!-- so Maven does NOT fail if there is no web.xml -->
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
