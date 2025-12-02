@@ -34,3 +34,8 @@ steps:
   inputs:
     mavenPomFile: 'HW6DynaWeb/pom.xml'
     goals: 'package'
+
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'HW6DynaWeb/pom.xml'
+    goals: 'deploy'
